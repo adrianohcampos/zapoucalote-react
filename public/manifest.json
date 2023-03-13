@@ -1,0 +1,43 @@
+{
+  "short_name": "ZoC",
+  "name": "Zap ou Calote",
+  "version": "2.0",
+  "author": "Adriano Campos - acampos.com.br",
+  "default_locale": "pt_BR",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "logo32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },    
+    {
+      "src": "logo180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#e23591",
+  "background_color": "#ffffff"
+}
