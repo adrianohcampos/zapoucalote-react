@@ -22,17 +22,46 @@
     display: inline-block;
     width: 200px;
     cursor: pointer;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+    position: relative;
 }
+
+.movieRow--overlay {
+    background-color: #000000b7;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px; 
+    background-position: center;
+    background-size: cover;
+    
+    transition: all ease 0.2s;
+    color: #FFFFFF;
+}
+
+.movieRow--overlay h3 {margin: 0;}
 
 .movieRow--item img {
     width: 100%;
-    border-radius: 8px;
-    transform: scale(0.9);
-    transition: all ease 0.2s;
+    border-radius: 8px;  
+    
 }
 
-.movieRow--item img:hover {
+.movieRow--item:hover {
     transform: scale(1);
+}
+
+.movieRow--item:hover .movieRow--overlay {
+    display: flex;
 }
 
 .movieRow--left,
@@ -71,3 +100,5 @@
         opacity: 1;
     }
 }
+
+

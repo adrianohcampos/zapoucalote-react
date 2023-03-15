@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './MovieRow.css';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const MovieRow = ({ title, items }) => {
   const [scrollX, setScrollX] = useState(0);
@@ -15,14 +16,24 @@ const MovieRow = ({ title, items }) => {
 
   const handleRightArrow = () => {
     const x = scrollX - Math.round(windowWidth / 2);
-    const listW = items.results.length * 200;
+    const listW = items.results.length * 200 + 70;
     setScrollX(windowWidth - listW > x ? (windowWidth - listW) - 30 : x);
   }
 
+  const url_normalize = (name) => {
+    return  name.toLowerCase().replaceAll(' ', '+').normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+  }
+
+  console.log(items)
   const movieItems = useMemo(() => {
-    return items.results.map((item) => (
+    return items.results.map((item) => (      
       <div key={item.id} className="movieRow--item">
-        <Link to={`/watch/${item.id}`}>
+        <Link to={`/title/${item.id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`}>
+          <div className="movieRow--overlay" >
+            <PlayCircleOutlineIcon style={{ fontSize: 70, marginBottom: 10 }} />
+            <h3>{item.title}</h3>
+            <div>Episódio {item.number}</div>
+          </div>
           <img
             src={`https://acampos.com.br/zoc-api/image/${item.poster_path}`} //${item.poster_path}
             alt={item.title}

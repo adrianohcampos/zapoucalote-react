@@ -8,7 +8,7 @@
 .featured--vertical {
     width: inherit;
     height: inherit;
-    background: linear-gradient(to top, #111 10%, transparent 90%);
+    background: linear-gradient(to top, #cc084a 10%, transparent 50%);
 }
 
 .featured--horizontal {
@@ -18,11 +18,13 @@
     flex-direction: column;
     justify-content: center;
     padding: 70px 30px 150px 30px;
+    background: linear-gradient(to right, rgb(204 8 74 / 50%) 0%, transparent 50% );
 }
 
 .featured--name {
     font-size: 4.5vw;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 .featured--info {
@@ -46,12 +48,12 @@
     margin-top: 15px;
     font-size: 1.2vw;
     color: #fff;
-    max-width: 40%;
+    max-width: 50%;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
 }
 
 .featured--buttons {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .featured--watchbutton,

@@ -4,6 +4,8 @@ import Helmet from "react-helmet";
 
 import Header from './components/Header'
 
+import './App.css';
+
 const App = () => {
   const [isHeaderBlack, setIsHeaderBlack] = useState(false);
 
@@ -26,7 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <Helmet>
-        <title>Netflix</title>
+        <title>Zap ou Calote</title>
         <meta name="description" content="Clone Netflix in React" />
       </Helmet>
       <Header black={isHeaderBlack} />

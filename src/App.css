@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #111;
+  background-color: #cc084a;
   color: #fff;
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -26,9 +26,14 @@ footer {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #000;
+  background-color: #cc084a;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 99;
+}
+
+a.link {
+  text-decoration: none !important;
+  color: #ffffff;
 }

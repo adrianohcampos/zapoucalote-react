@@ -40,7 +40,17 @@ const zocAPI = {
         }
 
         return info;
-    }
+    },
+    getEps: async (season_id) => {
+        return [            
+            {
+                slug: '',
+                title: '',
+                items: await basicFetch(`?season_id=${season_id}&api_key=${API_KEY}`)
+            },
+        ]
+    },
+
 }
 
 export default zocAPI;

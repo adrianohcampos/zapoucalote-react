@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactPlayer from 'react-player';
-import Tmdb from "../../Tmdb";
+import Zoc from "../../Zoc";
 import Helmet from "react-helmet";
 
 import './Watch.css';
@@ -11,21 +11,13 @@ const Watch = () => {
   const { id } = useParams();
   const [watchData, setWatchData] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/watch?v=6yzRr3SGuv0');
+  const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/watch?v=Yt3fpcv4tb4');
 
   useEffect(() => {
     const loadAll = async () => {
-      const chosenInfo = await Tmdb.getMovieInfo(id, 'tv');
-      const { videos } = chosenInfo;
-      const trailer = videos.results.find(i => i.type === 'Trailer') || videos.results[0];
-      
-      if(trailer !== undefined) {
-        handleVideoChange(trailer.site === 'YouTube' ? `https://www.youtube.com/watch?v=${trailer.key}` : `https://vimeo.com/${trailer.key}`)
-      } else {
-        handleVideoChange(videoUrl)
-      };
-      
-      setWatchData(chosenInfo);
+      const chosenInfo = await Zoc.getMovieInfo(id);
+      handleVideoChange(`https://www.youtube.com/watch?v=${chosenInfo.video_key}`);
+      setWatchData(chosenInfo);      
     }
     loadAll();
   }, [id,videoUrl])
@@ -40,8 +32,8 @@ const Watch = () => {
 
       {watchData && (
         <Helmet>
-          <title>Netflix - {watchData.name}</title>
-          <meta name="description" content="Clone Netflix in React" />
+          <title>{`Zap ou Calote - ${watchData.title}`}</title>
+          <meta name="description" content={watchData.overview} />
         </Helmet>
       )}
 
