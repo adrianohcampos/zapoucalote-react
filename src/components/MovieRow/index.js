@@ -24,7 +24,6 @@ const MovieRow = ({ title, items }) => {
     return  name.toLowerCase().replaceAll(' ', '+').normalize('NFD').replace(/[\u0300-\u036f]/g, "")
   }
 
-  console.log(items)
   const movieItems = useMemo(() => {
     return items.results.map((item) => (      
       <div key={item.id} className="movieRow--item">

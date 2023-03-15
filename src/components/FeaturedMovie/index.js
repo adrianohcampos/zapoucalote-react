@@ -43,8 +43,6 @@ const FeaturedMovie = ({ item }) => {
     backdrop = `https://acampos.com.br/zoc-api/image/${backdrop_path}`    
   } 
 
-  console.log('backdrop',backdrop)
-
   const truncatedDescription = getTruncatedDescription(overview);
  
   return (
