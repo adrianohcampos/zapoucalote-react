@@ -16,7 +16,7 @@ const MovieRow = ({ title, items }) => {
 
   const handleRightArrow = () => {
     const x = scrollX - Math.round(windowWidth / 2);
-    const listW = items.results.length * 200 + 70;
+    const listW = items.results.length * 230 + 70;
     setScrollX(windowWidth - listW > x ? (windowWidth - listW) - 30 : x);
   }
 
@@ -43,7 +43,7 @@ const MovieRow = ({ title, items }) => {
   }, [items.results]);
 
   const listWidth = useMemo(() => {
-    return (items.results.length + 1) * 200;
+    return (items.results.length + 1) * 230;
   }, [items.results]);
 
   return (

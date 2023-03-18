@@ -20,7 +20,7 @@
 
 .movieRow--item {
     display: inline-block;
-    width: 200px;
+    width: 230px;
     cursor: pointer;
     transform: scale(0.9);
     transition: all ease 0.2s;
@@ -40,20 +40,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 8px; 
+    border-radius: 8px;
     background-position: center;
     background-size: cover;
-    
+
     transition: all ease 0.2s;
     color: #FFFFFF;
 }
 
-.movieRow--overlay h3 {margin: 0;}
+.movieRow--overlay h3 {
+    margin: 0;
+}
 
 .movieRow--item img {
     width: 100%;
-    border-radius: 8px;  
-    
+    border-radius: 8px;
+
 }
 
 .movieRow--item:hover {
@@ -68,7 +70,7 @@
 .movieRow--right {
     position: absolute;
     width: 40px;
-    height: 300px;
+    height: 350px;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 99;
     display: flex;
@@ -100,5 +102,3 @@
         opacity: 1;
     }
 }
-
-
