@@ -1,12 +1,20 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import ShareIcon from '@mui/icons-material/Share';
 
-import './FeaturedMovie.css';
+import './Movie.css';
 
-const FeaturedMovie = ({ item }) => {
+const Movie = ({ item }) => {
 
+  const navigate = useNavigate();
+	const goBack = () => {
+		navigate(-1);
+	}
+  
   const {
     backdrop_path,
     title,
@@ -18,19 +26,11 @@ const FeaturedMovie = ({ item }) => {
     serie_title
   } = item;
 
-  const getTruncatedDescription = (overview) => {
-    if (overview.length > 300) {
-      return `${overview.substring(0, 200)}...`;
-    }
-    return overview;
-  }
 
   let backdrop = `https://i3.ytimg.com/vi/${video_key}/maxresdefault.jpg`
   if(backdrop_path !== '' && backdrop_path !== null) {
     backdrop = `https://acampos.com.br/zoc-api/image/${backdrop_path}`    
-  } 
-
-  const truncatedDescription = getTruncatedDescription(overview);
+  }   
  
   const url_normalize = (name) => {
     return  name.toLowerCase().replaceAll(' ', '+').normalize('NFD').replace(/[\u0300-\u036f]/g, "")
@@ -48,10 +48,11 @@ const FeaturedMovie = ({ item }) => {
             <div className="featured--year">Episódio {number}</div>
             <div className="featured--seasons">Temporada {season}</div>
           </div>
-          <div className="featured--description">{truncatedDescription}</div>
-          <div className="featured--buttons">
-            <a href={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</a>            
-            <a href={`/title/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--titlebutton"><ErrorOutlineIcon style={{ fontSize: 40 }} /> Mais Informações</a>
+          <div className="featured--description">{overview}</div>
+          <div className="featured--buttons">            
+            <a href={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</a>           
+            <a href={`/`} className="featured--titlebutton" onClick={goBack}><ArrowBackIcon style={{ fontSize: 40 }} /> Voltar</a>
+            {/* <a href={`/`} className="featured--titlebutton" onClick={goBack}><ShareIcon style={{ fontSize: 40 }} /></a> */}
           </div>
         </div>
       </div>
@@ -59,4 +60,4 @@ const FeaturedMovie = ({ item }) => {
   );
 }
 
-export default FeaturedMovie;
+export default Movie;

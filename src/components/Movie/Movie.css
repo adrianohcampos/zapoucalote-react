@@ -1,0 +1,122 @@
+.featured {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.featured--vertical {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to top, #cc084a 10%, transparent 50%);
+}
+
+.featured--horizontal {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 30px 150px 30px;
+    background: linear-gradient(to right, rgb(204 8 74 / 50%) 0%, transparent 50% );
+}
+
+.featured--name {
+    font-size: 4.5vw;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.featured--info {
+    font-size: 1.2vw;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.featured--point,
+.featured--year,
+.featured--seasons {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.featured--point {
+    color: #46d369;
+}
+
+.featured--description {
+    margin-top: 15px;
+    font-size: 1.2vw;
+    color: #fff;
+    max-width: 50%;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+}
+
+.featured--buttons {
+    margin-top: 30px;
+}
+
+.featured--watchbutton,
+.featured--titlebutton {
+    display: inline-block;
+    font-size: 20px;
+    
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured--watchbutton:hover,
+.featured--titlebutton:hover {
+    opacity: 0.7;
+}
+
+.featured--watchbutton {
+    background-color: #fff;
+    color: #000;
+}
+
+.featured--titlebutton {
+    background-color: #333;
+    color: #fff;
+}
+
+.featured--watchbutton svg,
+.featured--titlebutton svg {
+    margin-right: 10px;
+}
+
+
+@media (max-width:760px) {
+
+    .featured {
+        height: 90vh;
+    }
+
+    .featured--name {
+        font-size: 40px;
+    }
+
+    .featured--info {
+        font-size: 16px;
+    }
+
+
+    .featured--description {
+        font-size: 14px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+
+    .featured--watchbutton,
+    .featured--titlebutton {
+        font-size: 16px;
+    }
+
+}

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Zoc from "../../Zoc";
 import Helmet from "react-helmet";
-import FeaturedMovie from '../../components/FeaturedMovie'
-import MovieRow from '../../components/MovieRow'
+import Movie from '../../components/Movie'
+import Tabs from '../../components/Tabs'
+
 const Title = () => {
 
   const { id } = useParams();
   const [watchData, setWatchData] = useState(null);
-  const [movieList, setMovieList] = useState([]);
+  const [listzoc, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const Title = () => {
     loadAll();
   }, [id]);
 
+
   return (
     <div className="page">
 
@@ -41,18 +43,15 @@ const Title = () => {
         </Helmet>
       )}
 
-      {watchData && <FeaturedMovie item={watchData} />}
+      {watchData && <Movie item={watchData} />}     
 
-      <section className="lists">
-        {movieList.map((item, key) => (
-          <MovieRow key={key} title={item.title} items={item.items} />
-        ))}
-      </section>
+      <section className="lists">       
+          {listzoc && <Tabs episodes={listzoc} />}   
+      </section>         
 
       <footer>
         Feito com <span role="img" aria-label="coração">❤</span> by <a href="https://acampos.com.br" className="link" target="_blank" rel="noreferrer">Adriano Campos</a>
       </footer>
-
 
       {isLoading && (
         <div className="loading">

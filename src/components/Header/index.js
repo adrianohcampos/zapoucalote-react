@@ -1,14 +1,13 @@
 import React from "react";
-import { Link, useParams, useLocation  } from "react-router-dom";
+import { Link, useLocation  } from "react-router-dom";
 import './Header.css';
 import logo from '../../logo-top.png'
 const Header = ({ black }) => { 
-  // const { id } = useParams();
   
   const location = useLocation();
   let pathname = location.pathname
   const showHeader = pathname.indexOf("watch") < 0;
- 
+
  
   return (
     <header className={black ? 'black' : ''} style={{ display: showHeader ? 'flex' : 'none' }}>
