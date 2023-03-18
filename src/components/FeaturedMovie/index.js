@@ -45,6 +45,10 @@ const FeaturedMovie = ({ item }) => {
 
   const truncatedDescription = getTruncatedDescription(overview);
  
+  const url_normalize = (name) => {
+    return  name.toLowerCase().replaceAll(' ', '+').normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+  }
+
   return (
     <section className="featured" style={{ backgroundImage: `url(${backdrop})` }}>
       <div className="featured--vertical">
@@ -59,9 +63,10 @@ const FeaturedMovie = ({ item }) => {
           </div>
           <div className="featured--description">{truncatedDescription}</div>
           <div className="featured--buttons">
-            <a href={`/watch/${id}?title=${item.title}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</a>
+            
+            <a href={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</a>
             {pathname.indexOf("title") < 0 && (
-              <a href={`/title/${id}`} className="featured--titlebutton"><ErrorOutlineIcon style={{ fontSize: 40 }} /> Mais Informações</a>
+              <a href={`/title/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--titlebutton"><ErrorOutlineIcon style={{ fontSize: 40 }} /> Mais Informações</a>
             )} 
 
             {pathname.indexOf("title") > 0 && (
