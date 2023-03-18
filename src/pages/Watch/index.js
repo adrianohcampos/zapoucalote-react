@@ -17,7 +17,7 @@ const Watch = () => {
     const loadAll = async () => {
       const chosenInfo = await Zoc.getMovieInfo(id);
 
-      if(chosenInfo.video_key === 'Twitch' ){
+      if(chosenInfo.video_site === 'Twitch' ){
         handleVideoChange(`https://www.twitch.tv/videos/${chosenInfo.video_key}`);
       } else {
         handleVideoChange(`https://www.youtube.com/watch?v=${chosenInfo.video_key}`);
