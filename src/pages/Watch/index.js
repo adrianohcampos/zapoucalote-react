@@ -16,7 +16,14 @@ const Watch = () => {
   useEffect(() => {
     const loadAll = async () => {
       const chosenInfo = await Zoc.getMovieInfo(id);
-      handleVideoChange(`https://www.youtube.com/watch?v=${chosenInfo.video_key}`);
+
+      if(chosenInfo.video_key === 'Twitch' ){
+        handleVideoChange(`https://www.twitch.tv/videos/${chosenInfo.video_key}`);
+      } else {
+        handleVideoChange(`https://www.youtube.com/watch?v=${chosenInfo.video_key}`);
+      }     
+
+      
       setWatchData(chosenInfo);      
     }
     loadAll();
