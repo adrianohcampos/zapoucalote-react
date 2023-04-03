@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 // import ShareIcon from '@mui/icons-material/Share';
-
+import { Link } from "react-router-dom";
 import './Movie.css';
 
 const Movie = ({ item }) => {
@@ -50,8 +50,8 @@ const Movie = ({ item }) => {
           </div>
           <div className="featured--description">{overview}</div>
           <div className="featured--buttons">            
-            <a href={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</a>           
-            <a href={`/`} className="featured--titlebutton" onClick={goBack}><ArrowBackIcon style={{ fontSize: 40 }} /> Voltar</a>
+            <Link to={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</Link>           
+            <Link to={`/`} className="featured--titlebutton" onClick={goBack}><ArrowBackIcon style={{ fontSize: 40 }} /> Voltar</Link>
             {/* <a href={`/`} className="featured--titlebutton" onClick={goBack}><ShareIcon style={{ fontSize: 40 }} /></a> */}
           </div>
         </div>

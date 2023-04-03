@@ -2,7 +2,7 @@ import React from "react";
 
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-
+import { Link } from "react-router-dom";
 import './FeaturedMovie.css';
 
 const FeaturedMovie = ({ item }) => {
@@ -50,8 +50,8 @@ const FeaturedMovie = ({ item }) => {
           </div>
           <div className="featured--description">{truncatedDescription}</div>
           <div className="featured--buttons">
-            <a href={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</a>            
-            <a href={`/title/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--titlebutton"><ErrorOutlineIcon style={{ fontSize: 40 }} /> Mais Informações</a>
+            <Link to={`/watch/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--watchbutton"><PlayArrowIcon style={{ fontSize: 40 }} /> Assistir</Link>            
+            <Link to={`/title/${id}?episodio=${url_normalize(item.title)}&serie=${url_normalize(item.serie_title)}`} className="featured--titlebutton"><ErrorOutlineIcon style={{ fontSize: 40 }} /> Mais Informações</Link>
           </div>
         </div>
       </div>

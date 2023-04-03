@@ -51,14 +51,18 @@ const Watch = () => {
           controls={true}
           playing={true}
           width='100vw'
-          height='100vh'
+          height='100vh'          
+          config={{
+            youtube: {
+              playerVars: { rel: 1, iv_load_policy: 3, modestbranding:1}
+            }
+          }}
         />
       ) : (
         <div className="loading">
           <img src="https://i.gifer.com/origin/36/36527397c208b977fa3ef21f68c0f7b2_w200.gif" alt="loading" />
         </div>
-      )}
-
+      )}      
     </div>
   );
 }

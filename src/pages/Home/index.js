@@ -4,7 +4,6 @@ import Zoc from "../../Zoc";
 import MovieRow from '../../components/MovieRow'
 import FeaturedMovie from '../../components/FeaturedMovie'
 import Helmet from "react-helmet";
-// import ReactPlayer from 'react-player';
 
 import './Home.css';
 
@@ -40,7 +39,7 @@ const Home = () => {
     <div className="page">
       <Helmet>
         <title>Zap ou Calote - Home</title>
-        <meta name="description" content="Clone Netflix in React" />
+        <meta name="description" content="Zap ou Calote: Programa de namoro apresentado por Cid Cidoso. Site feito por fã." />
       </Helmet>
 
       {featuredData && <FeaturedMovie item={featuredData} />}

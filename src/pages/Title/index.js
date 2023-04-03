@@ -50,7 +50,7 @@ const Title = () => {
       </section>         
 
       <footer>
-        Feito com <span role="img" aria-label="coração">❤</span> by <a href="https://acampos.com.br" className="link" target="_blank" rel="noreferrer">Adriano Campos</a>
+        Feito com <span role="img" aria-label="coração">❤</span> por <a href="https://acampos.com.br" className="link" target="_blank" rel="noreferrer">Adriano Campos</a>
       </footer>
 
       {isLoading && (

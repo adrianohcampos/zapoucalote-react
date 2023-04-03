@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation  } from "react-router-dom";
+import { Link, NavLink, useLocation  } from "react-router-dom";
 import './Header.css';
 import logo from '../../logo-top.png'
 const Header = ({ black }) => { 
@@ -18,7 +18,7 @@ const Header = ({ black }) => {
         </Link>
       </div>
       <div>
-        <Link to="/" className="link">Home</Link>        
+        <NavLink to="/" className="link">Home</NavLink>        
       </div>
       <nav className="header--social">
           <a href="https://www.youtube.com/@CidCidoso" target="_blank" rel="noreferrer">
