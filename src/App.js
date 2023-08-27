@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Helmet from "react-helmet";
 
+import ToastSepp from './components/ToastSepp';
+
 import Header from './components/Header';
 import './App.css';
 
@@ -32,6 +34,7 @@ const App = () => {
       </Helmet>
       <Header black={isHeaderBlack} />
       <Outlet />
+      <ToastSepp />
     </div>
   );
 };
