@@ -7,3 +7,22 @@
     padding-top: 1rem!important;
     padding-bottom: 1rem!important;
 }
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+}
+
+.swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+    right:  15px !important;
+    left: auto !important;
+    top: 50% !important;
+    transform: translate3d(0px, -50%, 0) !important;
+}
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 6px 0 !important;
+    display: block !important;
+}

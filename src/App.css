@@ -13,6 +13,8 @@ body {
 
 .lists {
   margin-top: -150px;
+  position: relative;
+  z-index: 1;
 }
 
 footer {
@@ -37,3 +39,4 @@ a.link {
   text-decoration: none !important;
   color: #ffffff;
 }
+
