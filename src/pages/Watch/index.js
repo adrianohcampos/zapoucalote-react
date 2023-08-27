@@ -4,6 +4,8 @@ import ReactPlayer from 'react-player';
 import Zoc from "../../Zoc";
 import Helmet from "react-helmet";
 
+import ReactGA from 'react-ga';
+
 import './Watch.css';
 
 const Watch = () => {
@@ -14,6 +16,10 @@ const Watch = () => {
   const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/watch?v=Yt3fpcv4tb4');
 
   useEffect(() => {
+
+    // Rastrear a visualização da página
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
     const loadAll = async () => {
       const chosenInfo = await Zoc.getMovieInfo(id);
 

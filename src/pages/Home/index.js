@@ -5,6 +5,8 @@ import MovieRow from '../../components/MovieRow'
 import FeaturedMovie from '../../components/FeaturedMovie'
 import Helmet from "react-helmet";
 
+import ReactGA from 'react-ga';
+
 import './Home.css';
 
 const Home = () => {
@@ -13,6 +15,10 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+
+    // Rastrear a visualização da página
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    
     const loadAll = async () => {
       setIsLoading(true);
 

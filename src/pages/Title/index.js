@@ -5,6 +5,8 @@ import Helmet from "react-helmet";
 import Movie from '../../components/Movie'
 import Tabs from '../../components/Tabs'
 
+import ReactGA from 'react-ga';
+
 const Title = () => {
 
   const { id } = useParams();
@@ -13,6 +15,10 @@ const Title = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+
+    // Rastrear a visualização da página
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
     const loadAll = async () => {
 
       setIsLoading(true);

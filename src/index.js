@@ -8,6 +8,10 @@ import Home from './pages/Home';
 import Title from './pages/Title';
 // import ErrorPage from './pages/ErrorPage';
 
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-L57RPL0X0W"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
 const router = createBrowserRouter([
   {
     path: "/",
