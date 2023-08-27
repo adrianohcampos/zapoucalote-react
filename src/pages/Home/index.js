@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay  } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -28,12 +28,12 @@ const Home = () => {
   // const [featuredData, setFeaturedData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [banner, setBanner] = useState(null);
-  
+
   useEffect(() => {
 
     // Rastrear a visualização da página
     ReactGA.pageview(window.location.pathname + window.location.search);
-    
+
     const loadAll = async () => {
       setIsLoading(true);
 
@@ -68,7 +68,7 @@ const Home = () => {
         const resultadoFinal = [ultimoItem, ...tresItensAleatorios];
 
         setBanner(resultadoFinal);
-      
+
       } catch (error) {
         console.log(error);
       } finally {
@@ -86,40 +86,38 @@ const Home = () => {
         <meta name="description" content="Zap ou Calote: Programa de namoro apresentado por Cid Cidoso. Site feito por fã." />
       </Helmet>
 
-    {banner && 
-      <Swiper
-     
-      slidesPerView={1} 
-      modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
-      spaceBetween={50}    
-      direction= "horizontal"
-      pagination= {{clickable: true}}
-      loop={true}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-      effect="fade"
-      // autoplay={{
-      //   delay: 4500,
-      //   disableOnInteraction: false,
-      // }}
-      // navigation={true}
-      style={{
-        "--swiper-pagination-color": "#FFFFFF",
-        "--swiper-pagination-bullet-inactive-color": "#999999",
-        "--swiper-pagination-bullet-inactive-opacity": "0.5",
-        "--swiper-pagination-bullet-size": "12px",
-        "--swiper-pagination-bullet-horizontal-gap": "6px"
-      }}
-    >
-      {banner.map((item) => (
-        <SwiperSlide key={item.id}>
-          <FeaturedMovie item={item} />         
-        </SwiperSlide>
-      ))}    
-      
-    
-    </Swiper>
-    }
+      {banner &&
+        <Swiper
+          slidesPerView={1}
+          modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
+          spaceBetween={50}
+          direction="horizontal"
+          pagination={{ clickable: true }}
+          loop={true}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+          effect="fade"
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+          }}
+          style={{
+            "--swiper-pagination-color": "#FFFFFF",
+            "--swiper-pagination-bullet-inactive-color": "#999999",
+            "--swiper-pagination-bullet-inactive-opacity": "0.5",
+            "--swiper-pagination-bullet-size": "12px",
+            "--swiper-pagination-bullet-horizontal-gap": "6px"
+          }}
+        >
+          {banner.map((item) => (
+            <SwiperSlide key={item.id}>
+              <FeaturedMovie item={item} />
+            </SwiperSlide>
+          ))}
+
+
+        </Swiper>
+      }
       {/* {featuredData && <FeaturedMovie item={featuredData} />} */}
 
       <section className="lists">
@@ -129,7 +127,7 @@ const Home = () => {
       </section>
 
 
-      
+
 
       <footer>
         Feito com <span role="img" aria-label="coração">❤</span> por <a href="https://acampos.com.br" className="link" target="_blank" rel="noreferrer">Adriano Campos</a>
@@ -141,7 +139,7 @@ const Home = () => {
         </div>
       )}
 
-      
+
     </div>
   );
 }
