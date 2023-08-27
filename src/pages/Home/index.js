@@ -42,6 +42,7 @@ const Home = () => {
         setMovieList(listzoc);
 
         const originals = listzoc.find(i => i.slug === 'zoc_t2');
+        const zoc_t1 = listzoc.find(i => i.slug === 'zoc_t1');
         // const chosen = originals.items.results[originals.items.results.length - 1];
         // const chosenInfo = await Zoc.getMovieInfo(chosen.id);       
         // setFeaturedData(chosenInfo);
@@ -50,8 +51,8 @@ const Home = () => {
         const ultimoItem = originals.items.results[originals.items.results.length - 1];
 
         // Criando uma cópia do array original sem o último item
-        const arraySemUltimoItem = originals.items.results.slice(0, -1);
-
+        const arraySemUltimoItem = [...zoc_t1.items.results,...originals.items.results.slice(0, -1)];
+        
         // Gerando três índices aleatórios diferentes
         const randomIndices = [];
         while (randomIndices.length < 4) {
@@ -92,7 +93,9 @@ const Home = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
           spaceBetween={50}
           direction="horizontal"
-          pagination={{ clickable: true }}
+          pagination={{ 
+            clickable: true,           
+          }}
           loop={true}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
