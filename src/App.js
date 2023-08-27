@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Helmet from "react-helmet";
 
-import Header from './components/Header'
-
+import Header from './components/Header';
 import './App.css';
 
 const App = () => {
@@ -29,7 +28,7 @@ const App = () => {
     <div className="App">
       <Helmet>
         <title>Zap ou Calote</title>
-        <meta name="description" content="Clone Netflix in React" />
+        <meta name="description" content="Zap ou Calote: Programa de namoro apresentado por Cid Cidoso. Site feito por fã." />
       </Helmet>
       <Header black={isHeaderBlack} />
       <Outlet />
