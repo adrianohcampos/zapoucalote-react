@@ -6,6 +6,7 @@ import App from './App';
 import Watch from './pages/Watch';
 import Home from './pages/Home';
 import Title from './pages/Title';
+import Registration from './pages/Registration';
 // import ErrorPage from './pages/ErrorPage';
 
 import ReactGA from 'react-ga';
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
       {
         path: "/title/:id",
         element: <Title />
-      }
+      },
+      {
+        path: "/registration",
+        element: <Registration />
+      },
     ]
   }
 ])

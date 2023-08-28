@@ -7,6 +7,28 @@ const basicFetch = async (endpoint) => {
     return json;
 }
 
+// const basicFetchPost = async (postData) => {
+
+//     const response = await fetch('https://acampos.com.br/zoc-api/index.php', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(postData)
+//       });
+
+//       if (response.ok) {
+//         // A resposta foi bem-sucedida
+//         console.log('Post enviado com sucesso!');
+//       } else {
+//         console.error('Erro ao enviar o post.');
+//       }
+
+//     // const req = await fetch(`${API_BASE}${endpoint}`);
+//     // const json = await req.json();
+//     // return json;
+// }
+
 const zocAPI = {
     getHomelist: async () => {
         return [            

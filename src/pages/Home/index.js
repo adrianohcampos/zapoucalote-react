@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -83,14 +83,14 @@ const Home = () => {
   return (
     <div className="page">
       <Helmet>
-        <title>Zap ou Calote - Home</title>
+        <title>Zap ou Calote</title>
         <meta name="description" content="Zap ou Calote: Programa de namoro apresentado por Cid Cidoso. Site feito por fã." />
       </Helmet>
 
       {banner &&
         <Swiper
           slidesPerView={1}
-          modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
+          modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay, Keyboard]}
           spaceBetween={50}
           direction="horizontal"
           pagination={{ 
@@ -103,6 +103,9 @@ const Home = () => {
           autoplay={{
             delay: 4500,
             disableOnInteraction: false,
+          }}
+          keyboard={{
+            enabled: true,
           }}
           style={{
             "--swiper-pagination-color": "#FFFFFF",

@@ -18,8 +18,11 @@ const Header = ({ black }) => {
         </Link>
       </div>
       <div>
-        <NavLink to="/" className="link">Home</NavLink>        
+        <NavLink to="/" className="link">Início</NavLink>              
       </div>
+      {/* <div>       
+        <NavLink to="/registration" className="link">Inscrições</NavLink>       
+      </div> */}
       <nav className="header--social">
           <a href="https://www.youtube.com/@CidCidoso" target="_blank" rel="noreferrer">
             <i className="bi bi-youtube"></i>

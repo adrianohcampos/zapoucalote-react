@@ -37,6 +37,10 @@ footer {
 
 a.link {
   text-decoration: none !important;
+  color: #e2e2e2;
+}
+
+a.link.active {
   color: #ffffff;
 }
 

@@ -1,0 +1,30 @@
+.registration {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+}
+
+.registration--horizontal {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 30px 30px 30px;
+    margin-top: -150px;
+}
+
+.registration--name {
+    font-size: 4.5vw;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.registration--description {
+    margin-top: 15px;
+    font-size: 1.2vw;
+    color: #fff;
+    max-width: 50%;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+}
