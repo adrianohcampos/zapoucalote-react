@@ -5,8 +5,8 @@ const ToastSepp = () => {
 //   const audioRef = useRef(null);
 
   useEffect(() => {
-    const minTime = 20000; // 20 segundos em milissegundos
-    const maxTime = 120000; // 120 segundos em milissegundos
+    const minTime = 50000; // 50 segundos em milissegundos
+    const maxTime = 180000; // 180 segundos em milissegundos
 
     const interval = setInterval(() => {
       setShowDiv(true);
