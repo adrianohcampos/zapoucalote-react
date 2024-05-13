@@ -61,7 +61,7 @@ const Registration = () => {
       });
 
 
-      const response = await axios.post('https://acampos.com.br/zoc-api/index.php?reg=1', formData, {
+      const response = await axios.post('https://acampos.com.br/zoc-api/index2.php?reg=1', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -157,8 +157,8 @@ const Registration = () => {
                     {...register("convidado", {
                       required: "Convidado é obrigatório"
                     })}
-                    errors={!!errors.convidado}
-                    helperText={errors.convidado?.message}
+                    errors={!!errors.convidado ? 'true' : 'false'}
+                    
                   >
                     <MenuItem value='meuaroba1'>10/10 - Nome Convidado @meuaroba1</MenuItem>
                     <MenuItem value='meuaroba2'>20/10 - Nome Convidado @meuaroba2</MenuItem>
@@ -168,64 +168,64 @@ const Registration = () => {
                 <TextField label="Nome" type="text" {...register("nome", {
                   required: "Nome é obrigatório"
                 })}
-                  errors={!!errors.nome}
+                  errors={!!errors.nome ? 'true' : 'false'}
                   helperText={errors.nome?.message} />
 
                 <TextField label="Apelido" type="text" {...register("apelido", {
                   required: "Apelido é obrigatório"
                 })}
-                  errors={!!errors.apelido}
+                  errors={!!errors.apelido ? 'true' : 'false'}
                   helperText={errors.apelido?.message} />
 
                 <TextField label="Email" type="email" {...register("email", {
                   required: "Email is required",
                   pattern: /^\S+@\S+$/i
                 })}
-                  errors={!!errors.email}
+                  errors={!!errors.email ? 'true' : 'false'}
                   helperText={errors.email?.message} />
 
                 <TextField label="Idade" type="text" {...register("idade", {
                   required: "Idade é obrigatório",
                   min: 18
                 })}
-                  errors={!!errors.idade}
+                  errors={!!errors.idade ? 'true' : 'false'}
                   helperText={errors.idade?.message} />
 
                 <TextField label="Cidade" type="text" {...register("cidade", {
                   required: "Cidade é obrigatório"
                 })}
-                  errors={!!errors.cidade}
+                  errors={!!errors.cidade ? 'true' : 'false'}
                   helperText={errors.cidade?.message} />
 
                 <TextField label="Profissão/Ocupação" type="text" {...register("profissao", {
                   required: "Profissão é obrigatório"
                 })}
-                  errors={!!errors.profissao}
+                  errors={!!errors.profissao ? 'true' : 'false'}
                   helperText={errors.profissao?.message} />
 
                 <TextField label="Signo" type="text" {...register("signo", {
                   required: "Signo é obrigatório"
                 })}
-                  errors={!!errors.signo}
+                  errors={!!errors.signo ? 'true' : 'false'}
                   helperText={errors.signo?.message} />
 
                 <TextField label="Hobby" type="text" {...register("hobby", {
                   required: "Hobby é obrigatório"
                 })}
-                  errors={!!errors.hobby}
+                  errors={!!errors.hobby ? 'true' : 'false'}
                   helperText={errors.hobby?.message} />
 
                 <TextField label="Foto" type="file" {...register("foto")}
                   accept="image/*"
-                  errors={!!errors.file}
+                  errors={!!errors.file ? 'true' : 'false'}
                   helperText={errors.file?.message} />
 
                 <FormGroup>
                   <FormControlLabel required control={<Checkbox />} {...register("tenho18", {
                     required: "Campo obrigatório"
                   })}
-                    errors={!!errors.tenho18}
-                    helperText={errors.tenho18?.message}
+                    errors={!!errors.tenho18 ? 'true' : 'false'}
+                    
                     label="Tenho +18 anos, resido em São Paulo - SP e tenho disponibilidade para participar presencialmente do Zap ou Calote (Uber ida e volta free)" />
                 </FormGroup>
 

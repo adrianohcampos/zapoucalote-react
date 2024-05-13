@@ -1,5 +1,5 @@
 const API_KEY = '84ede80b8cb62c3623f68b964b5a1dc7'
-const API_BASE = 'https://acampos.com.br/zoc-api/index.php'
+const API_BASE = 'https://acampos.com.br/zoc-api/index2.php'
 
 const basicFetch = async (endpoint) => {
     const req = await fetch(`${API_BASE}${endpoint}`);
